@@ -4,29 +4,28 @@ import ProgressDisplay from "./ProgressDisplay";
 import StatusDisplay from "./StatusDisplay";
 
 const TicketCard = ({ ticket }) => {
-    
-    const formatTimestamp = (timestamp) => {
-        const options = {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true,
-        };
+  const formatTimestamp = (timestamp) => {
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    };
 
-        const date = new Date(timestamp);
-        const formattedDate = date.toLocaleString("en-US", options);
+    const date = new Date(timestamp);
+    const formattedDate = date.toLocaleString("en-US", options);
 
-        return formattedDate;
-    }
-  
-    return (
+    return formattedDate;
+  };
+
+  return (
     <div className="flex flex-col bg-card hover:bg-card-hover rounded-md shadow-lg p-3 m-2">
       <div className="flex mb-3">
         <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
-          <DeleteBlock />
+          <DeleteBlock id={ticket._id}/>
         </div>
       </div>
       <h4>{ticket.title}</h4>
