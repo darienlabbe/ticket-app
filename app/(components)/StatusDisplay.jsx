@@ -1,4 +1,4 @@
-const StatusDisplay = ({status}) => {
+const StatusDisplay = ({ status }) => {
   const getColor = (status) => {
     let color = "bg-slate-700";
     switch (status.toLowerCase()) {
@@ -14,9 +14,13 @@ const StatusDisplay = ({status}) => {
     }
     return color;
   };
-  
+
   return (
-    <span className={`inline-block rounded-full px-2 py-1 text-xs font-semibold text-gray-700 ${getColor(status)}`}>
+    <span
+      className={`inline-block rounded-full px-2 py-1 text-xs font-semibold text-gray-700 ${getColor(
+        status
+      )}`}
+    >
       {status}
     </span>
   );
